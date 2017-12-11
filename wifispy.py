@@ -18,10 +18,10 @@ import dpkt
 # change_channel  = 'airport en0 channel {}'
 
 # linux
-interface = 'wlan1mon'
-monitor_enable  = 'ifconfig wlan1 down; iw dev wlan1 interface add wlan1mon type monitor; ifconfig wlan1mon down; iw dev wlan1mon set type monitor; ifconfig wlan1mon up'
-monitor_disable = 'iw dev wlan1mon del; ifconfig wlan1 up'
-change_channel  = 'iw dev wlan1mon set channel %s'
+interface = 'mon0'
+monitor_enable  = 'ifconfig wlan0 down; iw dev wlan0 interface add mon0 type monitor; ifconfig mon0 down; iw dev mon0 set type monitor; ifconfig mon0 up'
+monitor_disable = 'iw dev mon0 del; ifconfig wlan0 up'
+change_channel  = 'iw dev mon0 set channel %s'
 
 channels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] # 2.4GHz only
 
